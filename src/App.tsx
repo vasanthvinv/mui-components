@@ -1,12 +1,11 @@
-import React from "react";
 import "./App.css";
-import Cards from "./components/Card";
-
-
+import UserCreateIndex from './components/User/Create/UserCreateIndex'
+import UserDetailsIndex from "./components/userdetails/UserDetailsIndex";
 function App() {
   return (
     <div>
-      <Cards />
+      <UserCreateIndex/>
+      <UserDetailsIndex />
     </div>
   );
 }

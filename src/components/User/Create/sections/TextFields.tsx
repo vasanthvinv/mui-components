@@ -1,16 +1,15 @@
-import React from "react";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
-import Country from "./Country"; 
+import Country from "./Country";
 import Card from "@mui/material/Card";
 import { Button, Switch } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 
-export default function BasicTextFields() {
+export default function TextFields() {
   const label = { inputProps: { "aria-label": "Color switch demo" } };
 
   return (
-    <Grid container spacing={2} xs={12} >
+    <Grid container spacing={2} xs={12}>
       <Grid item xs={6}>
         <Card>
           <CardContent>
@@ -18,10 +17,10 @@ export default function BasicTextFields() {
           </CardContent>
         </Card>
       </Grid>
-      <Grid item xs={6} >
+      <Grid item xs={6}>
         <Card>
-          <CardContent >
-            <Grid container spacing={2} >
+          <CardContent>
+            <Grid container spacing={2}>
               <Grid item xs={6}>
                 <TextField
                   id="full-name"
@@ -44,7 +43,7 @@ export default function BasicTextFields() {
                   label="Phone number"
                   variant="outlined"
                   onChange={(e) => {
-                    e.target.value = e.target.value.replace(/[^\d]/g, '');
+                    e.target.value = e.target.value.replace(/[^\d]/g, "");
                   }}
                   fullWidth
                   slotProps={{
@@ -55,7 +54,7 @@ export default function BasicTextFields() {
                 />
               </Grid>
               <Grid item xs={6}>
-                  <Country  />
+                <Country />
               </Grid>
               <Grid item xs={6}>
                 <TextField
@@ -105,7 +104,15 @@ export default function BasicTextFields() {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={12} sx={{ paddingTop: "2%", display: 'flex', justifyContent: 'flex-end' }}>
+              <Grid
+                item
+                xs={12}
+                sx={{
+                  paddingTop: "2%",
+                  display: "flex",
+                  justifyContent: "flex-end",
+                }}
+              >
                 <Button variant="contained" sx={{ backgroundColor: "black" }}>
                   Create user
                 </Button>
