@@ -72,23 +72,18 @@ const initialUsers = [
 
 export const UserList = () => {
   const [users, setUsers] = React.useState(initialUsers);
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [selectedUser, setSelectedUser] = React.useState<number | null>(null);
   const [arrow, setarrow] = React.useState<HTMLElement[]>([]);
-
-  const open = Boolean(anchorEl);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>, index: number) => {
     const newarrow = [...arrow];
     newarrow[index] = event.currentTarget;
     setarrow(newarrow);
     setSelectedUser(index);
-    setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
     setarrow([]);
-    setAnchorEl(null);
     setSelectedUser(null);
   };
 
@@ -102,73 +97,74 @@ export const UserList = () => {
   };
 
   return (
-    <Box>
+    <List>
       {users.map((user, index) => (
-        <Grid>
-          <Grid item xs={12} sx={{ display: "flex" }}>
-            <Grid container spacing={2}>
-              <Grid xs={8}>
-                <List>
-                  <ListItem key={index}>
-                    <ListItemAvatar>
-                      <Avatar alt={user.name} src={user.avatar} />
-                    </ListItemAvatar>
-                    <ListItemText primary={user.name} secondary={user.email} />
-                  </ListItem>
-                </List>
-              </Grid>
-              <Button
-                onClick={(e) => handleClick(e, index)}
-                sx={{ textTransform: "none", color: "black",justifyContent:"space-between",backgroundColor:"red" }}
-              >
-                {user.access}
-                {arrow[index] ? <ExpandMoreIcon /> : <ExpandLessIcon />}
-              </Button>
+        <Grid item xs={12} sx={{ display: "flex" }} key={index}>
+          <Grid container spacing={2}>
+            <Grid item xs={8}>
+              <ListItem key={index}>
+                <ListItemAvatar>
+                  <Avatar alt={user.name} src={user.avatar} />
+                </ListItemAvatar>
+                <ListItemText primary={user.name} secondary={user.email} />
+              </ListItem>
             </Grid>
-            <Menu
-              id="demo-positioned-menu"
-              anchorEl={arrow[index]}
-              open={Boolean(arrow[index])}
-              onClose={handleClose}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              transformOrigin={{
-                vertical: -24,
-                horizontal: 65,
+            <Button
+              onClick={(e) => handleClick(e, index)}
+              sx={{
+                textTransform: "none",
+                color: "black",
+                display: "flex",
+                justifyContent: "flex-end",
               }}
             >
-              <MenuList>
-                <MenuItem>
-                  <Button
-                    sx={{ gap: 1, textTransform: "none", color: "black" }}
-                    onClick={() => handleChange("Can View")}
-                  >
-                    <RemoveRedEyeIcon /> Can View
-                  </Button>
-                </MenuItem>
-                <MenuItem>
-                  <Button
-                    sx={{ gap: 1, textTransform: "none", color: "black" }}
-                    onClick={() => handleChange("Can Edit")}
-                  >
-                    <EditIcon /> Can Edit
-                  </Button>
-                </MenuItem>
-                <MenuItem sx={{ mt: "dotted" }}>
-                  <Button
-                    sx={{ gap: 1, color: "#FF3650", textTransform: "none" }}
-                  >
-                    <DeleteIcon /> Remove
-                  </Button>
-                </MenuItem>
-              </MenuList>
-            </Menu>
+              {user.access}
+              {arrow[index] ? <ExpandMoreIcon /> : <ExpandLessIcon />}
+            </Button>
           </Grid>
+          <Menu
+            id="demo-positioned-menu"
+            anchorEl={arrow[index]}
+            open={Boolean(arrow[index])}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "left",
+            }}
+            transformOrigin={{
+              vertical: -24,
+              horizontal: 65,
+            }}
+          >
+            <MenuList>
+              <MenuItem>
+                <Button
+                  sx={{ gap: 1, textTransform: "none", color: "black" }}
+                  onClick={() => handleChange("Can View")}
+                >
+                  <RemoveRedEyeIcon /> Can View
+                </Button>
+              </MenuItem>
+              <MenuItem>
+                <Button
+                  sx={{ gap: 1, textTransform: "none", color: "black" }}
+                  onClick={() => handleChange("Can Edit")}
+                >
+                  <EditIcon /> Can Edit
+                </Button>
+              </MenuItem>
+              <MenuItem sx={{ mt: "dotted" }}>
+                <Button
+                  sx={{ gap: 1, color: "#FF3650", textTransform: "none" }}
+                >
+                  <DeleteIcon /> Remove
+                </Button>
+              </MenuItem>
+            </MenuList>
+          </Menu>
         </Grid>
       ))}
-    </Box>
+    </List>
   );
 };
 

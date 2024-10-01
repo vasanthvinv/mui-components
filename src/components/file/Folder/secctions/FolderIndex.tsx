@@ -3,9 +3,8 @@ import Docs from '../secctions/Docs'
 
 const FolderIndex = () => {
   return (
-    <div>
       <Docs/>
-    </div>
+   
   )
 }
 
