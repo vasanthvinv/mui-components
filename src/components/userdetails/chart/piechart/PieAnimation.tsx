@@ -75,6 +75,7 @@ const CustomPieChart = () => {
             left: "40%",
             textAlign: "center",
           }}
+          
         >
           {activeData ? (
             <>

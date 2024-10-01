@@ -22,10 +22,11 @@ export default function Years() {
         </Typography>
       </Box>
       <Box sx={{ textAlign: "right" }}>
-        <FormControl sx={{ height: "450" }}>
+        <FormControl sx={{ m: 1, minWidth: 90 }}>
           <Select
             value={year}
             onChange={handleChange}
+            displayEmpty
             inputProps={{ "aria-label": "Without label" }}
           >
             <MenuItem value={2022}>2022</MenuItem>
@@ -35,5 +36,6 @@ export default function Years() {
         </FormControl>
       </Box>
     </Box>
+    
   );
 }

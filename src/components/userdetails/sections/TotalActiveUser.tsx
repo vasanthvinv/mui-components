@@ -32,7 +32,7 @@ const TotalActiveUser = () => {
   return (
     <Grid container spacing={2}>
       {data.map((item, index) => (
-        <Grid item xs={12} sm={4} key={index}>
+        <Grid item xs={12} sm={12} md={4} key={index}>
           <Card>
             <CardContent>
               <Box
