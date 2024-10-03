@@ -4,12 +4,13 @@ import Country from "./Country";
 import Card from "@mui/material/Card";
 import { Button, Switch } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
+import React from "react";
 
 export default function TextFields() {
   const label = { inputProps: { "aria-label": "Color switch demo" } };
 
   return (
-    <Grid container spacing={2} xs={12}>
+    <Grid container spacing={2}>
       <Grid item xs={6}>
         <Card>
           <CardContent>
