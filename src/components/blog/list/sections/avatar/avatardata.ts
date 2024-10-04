@@ -9,7 +9,7 @@ interface InitialType {
   export const initialUsers: InitialType[] = [
     {
       id: 1,
-      name: "Jayvion Simon",
+      name: "Jayvion ",
       email: "nannie.abernathy70@yahoo.com",
       avatar:
         "https://assets.minimals.cc/public/assets/images/mock/avatar/avatar-1.webp",
@@ -41,7 +41,7 @@ interface InitialType {
     },
     {
       id: 5,
-      name: "Reece Chung",
+      name: "Reece Simon",
       email: "letha.lubowitz24@yahoo.com",
       avatar:
         "https://assets.minimals.cc/public/assets/images/mock/avatar/avatar-5.webp",
@@ -49,21 +49,21 @@ interface InitialType {
     },
     {
       id: 6,
-      name: "Reece Chung",
+      name: "Yuvaraj",
       email: "letha.lubowitz24@yahoo.com",
       avatar: "https://mui.com/static/images/avatar/3.jpg",
       access: "Can edit",
     },
     {
       id: 7,
-      name: "Reece Chung",
+      name: "Gopi",
       email: "letha.lubowitz24@yahoo.com",
       avatar: "https://mui.com/static/images/avatar/4.jpg",
       access: "Can edit",
     },
     {
       id: 8,
-      name: "Reece Chung",
+      name: "Ragul",
       email: "letha.lubowitz24@yahoo.com",
       avatar:
         "https://api-prod-minimal-v610.pages.dev/assets/images/avatar/avatar-1.webp",
@@ -71,7 +71,7 @@ interface InitialType {
     },
     {
       id: 9,
-      name: "Reece Chung",
+      name: "Tamil",
       email: "letha.lubowitz24@yahoo.com",
       avatar:
         "https://api-prod-minimal-v610.pages.dev/assets/images/avatar/avatar-2.webp",
