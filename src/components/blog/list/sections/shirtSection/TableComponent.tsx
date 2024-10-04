@@ -20,8 +20,8 @@ interface TableComponentProps {
 
 const TableComponent = ({ data }: TableComponentProps) => {
   return (
-    <Grid container spacing={2} alignItems="center" >
-      <Grid item xs={8} md={4} lg={5}>
+    <Grid container spacing={1} alignItems="center" >
+      <Grid item xs={2} md={4} >
         <Table>
           <TableHead>
             <TableRow>

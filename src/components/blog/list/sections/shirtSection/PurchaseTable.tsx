@@ -31,12 +31,11 @@ export default function PurchaseTable() {
   };
 
   return (
-    <Grid container spacing={2} justifyContent="center">
+    <Grid container spacing={1} justifyContent="center">
       <Grid
         item
-        xs={12}
-        md={6}
-        lg={4}
+        xs={7}
+        md={3}
         sx={{ display: "flex", justifyContent: "space-between" }}
       >
         <Button variant="outlined" onClick={handleClick}>
@@ -60,19 +59,18 @@ export default function PurchaseTable() {
           <MenuItem onClick={() => handleGroup("Status")}>Status</MenuItem>
         </Menu>
       </Grid>
-      <Grid item xs={12} md={9}>
+      <Grid item xs={12} md={6}>
         {groupBy === "Status" && (
           <Card>
             {["Initial", "Pending", "Completed"].map((status) => (
-              <Accordion key={status}>
+              <Accordion  >
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
-                  aria-controls={`${status}-content`}
                   id={`${status}-header`}
                 >
                   {status}
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails >
                   <TableComponent
                     data={rows.filter((item) => item.Status === status)}
                   />
@@ -101,10 +99,11 @@ export default function PurchaseTable() {
             ))}
           </Card>
         )}
-      </Grid>
+    
       {groupBy === "Assign" || groupBy === "Status" || (
         <TableComponent data={rows} />
       )}
+        </Grid>
     </Grid>
   );
 }
