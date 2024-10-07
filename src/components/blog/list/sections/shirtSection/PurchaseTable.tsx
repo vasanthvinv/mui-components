@@ -31,12 +31,13 @@ export default function PurchaseTable() {
   };
 
   return (
-    <Grid container spacing={1} justifyContent="center">
+    <Grid container spacing={2} justifyContent="center">
       <Grid
         item
         xs={7}
-        md={3}
-        sx={{ display: "flex", justifyContent: "space-between" }}
+        md={12}
+        sm
+        sx={{ display: "flex", justifyContent: "space-evenly" }}
       >
         <Button variant="outlined" onClick={handleClick}>
           Group By
@@ -59,10 +60,11 @@ export default function PurchaseTable() {
           <MenuItem onClick={() => handleGroup("Status")}>Status</MenuItem>
         </Menu>
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={10} md={4}>
         {groupBy === "Status" && (
           <Card>
             {["Initial", "Pending", "Completed"].map((status) => (
+               <Grid item xs={12} md={12}>
               <Accordion  >
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
@@ -76,12 +78,13 @@ export default function PurchaseTable() {
                   />
                 </AccordionDetails>
               </Accordion>
+              </Grid>
             ))}
           </Card>
         )}
         {groupBy === "Assign" && (
           <Card>
-            {["Tamil Selvi", "Gokila vani", "Rani"].map((name) => (
+            {["Tamil Selvi", "Gopika", "Rani"].map((name) => (
               <Accordion key={name}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}

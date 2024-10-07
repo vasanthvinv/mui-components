@@ -23,7 +23,7 @@ export const rows: Row[] = [
     Status: "Pending",
     Assign:
       "https://assets.minimals.cc/public/assets/images/mock/avatar/avatar-5.webp",
-    name: "Gokila vani",
+    name: "Gopika",
     color: "grey",
   },
   {
@@ -50,7 +50,7 @@ export const rows: Row[] = [
     Status: "Completed",
     Assign:
       "https://assets.minimals.cc/public/assets/images/mock/avatar/avatar-5.webp",
-    name: "Gokila vani",
+    name: "Gopika",
     color: "green",
   },
   {

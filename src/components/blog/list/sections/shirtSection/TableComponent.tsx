@@ -20,30 +20,30 @@ interface TableComponentProps {
 
 const TableComponent = ({ data }: TableComponentProps) => {
   return (
-    <Grid container spacing={1} alignItems="center" >
-      <Grid item xs={2} md={4} >
+    <Grid container  alignItems="center" >
+      <Grid item >
         <Table>
           <TableHead>
             <TableRow>
               <TableCell align="center">Id</TableCell>
               <TableCell align="center">Items</TableCell>
               <TableCell align="center">Status</TableCell>
-              <TableCell align="center">Assign</TableCell>
+              <TableCell align="left">Assign</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {data.map((row) => (
               <TableRow key={row.id}>
-                <TableCell align="center">{row.id}</TableCell>
-                <TableCell align="center">{row.Items}</TableCell>
-                <TableCell align="center">
+                <TableCell >{row.id}</TableCell>
+                <TableCell >{row.Items}</TableCell>
+                <TableCell >
                   <Button
                     variant="contained"
                     sx={{
                       color: "black",
-                      minWidth: "100px",
-                      minHeight: "40px",
-                      padding: "8px",
+                      padding: "0.11px",
+                      minHeight:30,
+                      minWidth:80,
                       borderRadius: "4px",
                     }}
                   >
