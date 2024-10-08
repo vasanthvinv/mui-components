@@ -1,3 +1,4 @@
+import React from 'react'
 import TextFields from './sections/TextFields'
 
 const index = () => {
@@ -9,3 +10,5 @@ const index = () => {
 }
 
 export default index
+
+
